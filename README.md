@@ -104,10 +104,8 @@ First, let's talk a little about the deck of cards. Solitaire needs a full deck 
 
 For the sake of testing, the first ten output letters for an unkeyed deck are:
 
-	```
 	D (4)  W (49)  J (10)  Skip Joker (53)  X (24)  H (8)
 	Y (51)  R (44)  F (6)  D (4)  G (33)
-	```
 
 That's all there is to Solitaire, finally. It's really longer to explain than it is to code up.
 
@@ -117,8 +115,6 @@ All the examples for this quiz assume an unkeyed deck, but your script can provi
 
 Here's a couple of messages to test your work with. You'll know when you have them right:
 
-	```
 	CLEPK HHNIY CFPWH FDFEH
 
 	ABVAW LWZSY OORYK DUPVH
-	```
