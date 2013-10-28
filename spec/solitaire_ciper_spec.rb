@@ -49,11 +49,16 @@ describe SolitaireCipher do
     end
 
     it "should output a letter" do
-      fail
+      SolitaireCipher.move_card('A', 1)
+      SolitaireCipher.move_card('B', 2)
+      SolitaireCipher.triple_cut
+      SolitaireCipher.count_cut
+      SolitaireCipher.output_letter.should eq('D')
     end
 
     it "should not output anything if the output card is a joker" do
-      fail
+      SolitaireCipher.move_card('A', 2)
+      SolitaireCipher.output_letter.should eq(nil)
     end
     
     it "should create an unkeyed deck" do

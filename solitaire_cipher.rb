@@ -26,7 +26,7 @@ class SolitaireCipher
     # Find the output letter: convert the top card to its value and count down that many cards from the top of the deck, with the top card itself being card number one; look at the card immediately after your count and convert it to a letter; if the output card is a joker, no letter is generated this sequence; this step does not alter the deck
     output_letter
 
-    p @deck
+    # p @deck
   end
 
   def self.base_deck
@@ -70,7 +70,19 @@ class SolitaireCipher
     last = @deck.pop
     num = last.to_i
     @deck = @deck.slice(num, @deck.size - 1) + @deck.slice(0, num) + [last]
-    # 1, 2, 4, 5, 3 => (5, 3,) num:last (1, 2, 4) 0:num-1
+  end
+
+  def self.output_letter
+    selected_letter = @deck[@deck.first.to_i]
+    p selected_letter
+    if selected_letter.eql?('A') || selected_letter.eql?('B')
+      return
+    else
+      @keystream ||= []
+      new_letter = (selected_letter.to_i + 64).chr
+      @keystream << new_letter
+      new_letter
+    end
   end
 
 end
